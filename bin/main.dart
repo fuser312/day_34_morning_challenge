@@ -44,15 +44,12 @@ int minRemovals(String firstWord, String secondWord) {
 
     int count = 0;
     for (int i = 0; i < firstString.length; i++) {
-      if (secondString.contains(firstString[i])) {
-        int removeIndex = secondString.indexWhere((element) =>
-        element == (firstString[i]));
-        secondString.removeAt(removeIndex);
-      }
-      else {
-        count++;
-      }
+    if (secondString.contains(firstString[i])) {
+      secondString.remove(firstString[i]);
+    } else {
+      count++;
     }
+  }
     return count + secondString.length;
   }
 }
@@ -87,12 +84,7 @@ bool checkForAnagram(String wordOne, String wordTwo){
         secondWord.remove(firstWord[i]);
       }
     }
-    if(secondWord.isEmpty){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return secondWord.isEmpty;
   }
 }
 

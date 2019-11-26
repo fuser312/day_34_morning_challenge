@@ -12,6 +12,10 @@ void main() {
   test("Test case for anagram", (){
     expect(checkForAnagram("balloon", "balooon"), false);
   });
+
+  test("Test case for Hamming Distance", (){
+    expect((hammingDistance("mood", "doom")), 2);
+  });
 }
 
 
